@@ -1,0 +1,26 @@
+def game_hangman():
+    word="EVAPORATE"
+    a,b,c=1,0,list("_"*len(word))
+    print("_"*len(word))
+    while True:
+        enter=input("input the word:.upper()")
+        if len(enter)==1:
+            if enter in word:
+                for letter in range(len(word)):
+                    if enter==word[letter]:
+                        c[letter]=enter
+                else:           
+                    b+=1
+                    print("not in the word")
+                print(''.join(c))
+                if c==list(word):
+                    print("you win")
+                    break
+                elif b==9:
+                    print("you lose")
+                    break
+                else:
+                    a+=1
+            else:
+                print("choose one letter")
+    return()
