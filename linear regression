@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+m1=np.random.randint(100)
+c1=np.random.randint(100)
+lambda1=0.01
+for i in range(1000):
+    y1=m1*x+c1
+    e1=y-m1*x-c1
+    error =np.sum((y-y1)**2)/400
+    derr_dm=-(np.dot(e1,x))/200
+    derr_dc=-(np.sum(e1))/200
+    m1=m1-lambda1*derr_dm
+    c1=c1-lambda1*derr_dc
+    
